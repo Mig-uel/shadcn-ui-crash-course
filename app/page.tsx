@@ -1,3 +1,4 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -32,7 +33,13 @@ export default async function Home() {
         {recipes.map((recipe) => (
           <Card key={recipe.id} className='flex flex-col justify-between'>
             <CardHeader className='flex flex-row gap-4 items-center'>
-              {/* TODO: avatar */}
+              <Avatar>
+                <AvatarImage src={`/img/${recipe.image}`} alt={recipe.title} />
+                <AvatarFallback>
+                  {recipe.title.slice(0, 1)}
+                  {recipe.title.split(' ')[1].slice(0, 1)}
+                </AvatarFallback>
+              </Avatar>
               <div>
                 <CardTitle>{recipe.title}</CardTitle>
                 <CardDescription>{recipe.time} mins to cook</CardDescription>
