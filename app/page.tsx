@@ -1,3 +1,4 @@
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -43,9 +44,9 @@ export default async function Home() {
             <CardFooter className='flex justify-between gap-3'>
               <Button>View Recipe</Button>
               {recipe.vegan && (
-                <Button variant='ghost' size='icon'>
+                <Badge className='rounded' variant='secondary'>
                   <Sprout />
-                </Button>
+                </Badge>
               )}
             </CardFooter>
           </Card>
